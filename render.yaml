@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: firefly
+    env: docker
+    plan: free
+    region: singapore
+    dockerCommand: |
+      docker run --rm \
+      -e APP_KEY=${APP_KEY} \
+      -e APP_ENV=production \
+      -e DB_CONNECTION=pgsql \
+      -e DB_HOST=${DB_HOST} \
+      -e DB_PORT=5432 \
+      -e DB_DATABASE=${DB_DATABASE} \
+      -e DB_USERNAME=${DB_USERNAME} \
+      -e DB_PASSWORD=${DB_PASSWORD} \
+      -p 10000:8080 \
+      jc5x/firefly-iii:latest
