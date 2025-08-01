@@ -1,1 +1,1 @@
-FROM jc5x/firefly-iii:latest
+FROM fireflyiii/core:latest
